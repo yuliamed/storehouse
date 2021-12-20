@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uni.example.storehouse.controllers.ChangePassController">
+   <children>
+      <VBox prefHeight="536.0" prefWidth="450.0" style="-fx-background-color: #F9F9FF;">
+         <children>
+            <Pane prefHeight="84.0" prefWidth="450.0" style="-fx-background-color: #FFA577;">
+               <children>
+                  <Label fx:id="nameItem" contentDisplay="CENTER" layoutX="123.0" layoutY="25.0" text="Замена пароля" textAlignment="CENTER" textFill="#653f39">
+                     <font>
+                        <Font name="Broadway" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label text="Старый пароль">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" top="25.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="tfOldPass" prefHeight="42.0" prefWidth="303.0">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Label text="Новый пароль">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="tfNewPass" prefHeight="42.0" prefWidth="303.0">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Label text="Повторите новый пароль">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="tfRepeatNewPass" prefHeight="42.0" prefWidth="303.0">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </PasswordField>
+            <AnchorPane prefHeight="115.0" prefWidth="450.0" />
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="56.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;">
+               <items>
+                  <Button fx:id="btnExit" graphicTextGap="15.0" mnemonicParsing="false" onAction="#onExit" prefHeight="42.0" prefWidth="150.0" stylesheets="@../../../styles/innerButtons.css" text="Отмена" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSave" graphicTextGap="15.0" mnemonicParsing="false" onAction="#onSave" prefHeight="42.0" prefWidth="150.0" stylesheets="@../../../styles/buttons.css" text="Сохранить" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Button>
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

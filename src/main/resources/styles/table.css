@@ -1,0 +1,21 @@
+.table-view .column-header,
+.table-view .column-header-background .filler{
+    -fx-cell-size :20;
+    -fx-background-color: #D55448;
+}
+.table-view column-header .label{
+    -fx-text-fill: #F9F9FF;
+    -fx-alignment: CENTER_LEFT;
+    }
+
+.table-view .cell{
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color:#F9F9FF;
+    -fx-text-fill: #653f39;
+}
+.table-row-cell:selected {
+-fx-background-color: #FFA577;
+}
+.table-view {
+-fx-background-color: #F9F9FF ;
+}

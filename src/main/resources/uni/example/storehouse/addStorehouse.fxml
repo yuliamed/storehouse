@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #F9F9FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uni.example.storehouse.controllers.AddStorehouseController">
+   <children>
+      <VBox id="personalInfo" fx:id="vbPersonalInfo" layoutX="2.0" prefHeight="273.0" prefWidth="600.0" style="-fx-background-color: #F9F9FF;">
+         <children>
+            <Pane prefHeight="43.0" prefWidth="580.0" />
+            <Label text="Адресс" textFill="#d55448">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="tfAdress" prefHeight="42.0" prefWidth="300.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Количество рядов" textFill="#d55448">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="tfCountRack" prefHeight="42.0" prefWidth="300.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Количество мест" textFill="#d55448">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="tfCountPlaces" prefHeight="42.0" prefWidth="300.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+      <ToolBar layoutX="271.0" layoutY="381.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="55.0" prefWidth="317.0" style="-fx-background-color: #F9F9FF;">
+         <items>
+            <Button fx:id="btExit" mnemonicParsing="false" onAction="#onExit" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Отмена" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btSave" mnemonicParsing="false" onAction="#onSave" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Добавить" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Button>
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

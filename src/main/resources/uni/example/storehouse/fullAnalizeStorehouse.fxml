@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="555.0" prefWidth="927.0" style="-fx-background-color: #F9F9FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uni.example.storehouse.controllers.FullAnalizeStorehouseController">
+   <children>
+      <PieChart fx:id="pieStoreFilledCells" layoutX="10.0" layoutY="14.0" prefHeight="403.0" prefWidth="440.0" />
+      <PieChart fx:id="pieStoreStorePrice" layoutX="464.0" layoutY="14.0" prefHeight="403.0" prefWidth="451.0" />
+      <ToolBar layoutX="600.0" layoutY="500.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="55.0" prefWidth="313.0" style="-fx-background-color: #F9F9FF;">
+         <items>
+            <Button fx:id="btExit" mnemonicParsing="false" onAction="#onExit" prefHeight="42.0" prefWidth="105.0" stylesheets="@../../../styles/innerButtons.css" text="Закрыть" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Button>
+         </items>
+      </ToolBar>
+      <TextField fx:id="tfFilledCells" editable="false" layoutX="252.0" layoutY="442.0" prefHeight="42.0" prefWidth="185.0" />
+      <Label layoutX="252.0" layoutY="424.0" prefHeight="18.0" prefWidth="198.0" text="Количество занятых мест">
+         <font>
+            <Font name="Algerian" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfFreeCells" editable="false" layoutX="53.0" layoutY="442.0" prefHeight="42.0" prefWidth="185.0" />
+      <Label layoutX="53.0" layoutY="424.0" prefHeight="18.0" prefWidth="185.0" text="Количество свободных">
+         <font>
+            <Font name="Algerian" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfStorehousePrice" editable="false" layoutX="464.0" layoutY="442.0" prefHeight="42.0" prefWidth="185.0" />
+      <Label layoutX="464.0" layoutY="424.0" prefHeight="18.0" prefWidth="198.0" text="Общая цена склада">
+         <font>
+            <Font name="Algerian" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

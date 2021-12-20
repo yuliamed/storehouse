@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uni.example.storehouse.controllers.AddNewProcurementController">
+   <children>
+      <VBox id="users" fx:id="vbUsers" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #F9F9FF;">
+         <children>
+            <Pane prefHeight="319.0" prefWidth="900.0">
+               <children>
+                  <Label layoutX="263.0" layoutY="26.0" text="Номер договора" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfProcurNumber" layoutX="407.0" layoutY="14.0" prefHeight="42.0" prefWidth="130.0">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="64.0" layoutY="105.0" text="Имя" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfAdress" editable="false" layoutX="60.0" layoutY="189.0" prefHeight="42.0" prefWidth="229.0">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="64.0" layoutY="166.0" text="Адрес" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="59.0" layoutY="76.0" text="Данные поставщика" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="231.0" text="Номер" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfNumber" editable="false" layoutX="60.0" layoutY="251.0" prefHeight="42.0" prefWidth="229.0">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="263.0" text="+375" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="457.0" layoutY="76.0" text="Данные договора" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbProviderId" layoutX="242.0" layoutY="65.0" onAction="#onSelectProvider" prefHeight="42.0" prefWidth="158.0" promptText="Выбрать" />
+                  <ComboBox fx:id="cbMenegers" editable="true" layoutX="457.0" layoutY="125.0" prefHeight="42.0" prefWidth="229.0" />
+                  <Label layoutX="457.0" layoutY="105.0" text="Менеджер" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfName" editable="false" layoutX="60.0" layoutY="125.0" prefHeight="42.0" prefWidth="229.0">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="557.0" layoutY="232.0" text="Выбрать продукт" textFill="#653f39">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="557.0" layoutY="252.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="42.0" prefWidth="229.0" text="Добавить продукт" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                     <stylesheets>
+                        <URL value="@../../../styles/innerButtons.css" />
+                        <URL value="@../../../styles/buttons.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button layoutX="321.0" layoutY="251.0" mnemonicParsing="false" onAction="#onRefrsh" prefHeight="42.0" prefWidth="99.0" stylesheets="@../../../styles/brownButtons.css" text="Refresh" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="430.0" layoutY="251.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="42.0" prefWidth="99.0" stylesheets="@../../../styles/brownButtons.css" text="Удаление" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <TableView fx:id="tableProducts" prefHeight="370.0" prefWidth="800.0" style="-fx-background-color: #F9F9FF;" stylesheets="@../../../styles/table.css">
+               <columns>
+                  <TableColumn fx:id="tcUserNumber" prefWidth="36.0" text="№" />
+                  <TableColumn fx:id="tcIdProduct" prefWidth="100.0" text="ID Продукта" />
+                  <TableColumn fx:id="tcNameProduct" prefWidth="100.0" text="Название" />
+                  <TableColumn fx:id="tcUnit" prefWidth="100.0" text="Ед.изм" />
+                  <TableColumn fx:id="tcPrice" prefWidth="100.0" text="Цена" />
+                  <TableColumn fx:id="tcVAT" prefWidth="100.0" text="НДС" />
+                  <TableColumn fx:id="tcMass" prefWidth="100.0" text="Масса" />
+                  <TableColumn fx:id="tcCount" prefWidth="100.0" text="Количество" />
+               </columns>
+            </TableView>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="56.0" prefWidth="511.0" style="-fx-background-color: #F9F9FF;">
+               <items>
+                  <Button fx:id="btExit" mnemonicParsing="false" onAction="#onExit" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Отмена" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btSave" mnemonicParsing="false" onAction="#onSave" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Сохранить" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Button>
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

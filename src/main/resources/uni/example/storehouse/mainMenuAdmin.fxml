@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #F9F9FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uni.example.storehouse.controllers.MenuAdminController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="260.0" style="-fx-background-color: #FFA577;">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="260.0" style="-fx-background-color: #F9F9FF;" />
+            <Button fx:id="btnMyProfile" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="260.0" text="Мои данные" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUsers" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="260.0" text="Пользователи" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btnProcurement" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="260.0" text="Поставки" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOrders" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="260.0" text="Склады" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnExit" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="260.0" stylesheets="@../../../styles/buttons.css" text="Выход" textFill="#f9f9ff">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="200.0" prefWidth="260.0" style="-fx-background-color: #F9F9FF;" stylesheets="@../../../styles/buttons.css" />
+         </children>
+         <stylesheets>
+            <URL value="@../../../styles/buttons.css" />
+         </stylesheets>
+      </VBox>
+      <Pane layoutX="260.0" prefHeight="84.0" prefWidth="640.0" style="-fx-background-color: #FFA577;">
+         <children>
+            <Label fx:id="nameItem" contentDisplay="CENTER" layoutX="224.0" layoutY="25.0" text="МОИ ДАННЫЕ" textAlignment="CENTER" textFill="#653f39">
+               <font>
+                  <Font name="Broadway" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox id="users" fx:id="vbProcurement" layoutX="260.0" layoutY="84.0" prefHeight="516.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;">
+         <children>
+            <Pane prefHeight="116.0" prefWidth="640.0">
+               <children>
+                  <ToolBar layoutY="57.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="56.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;">
+                     <items>
+                        <Button fx:id="btAddProcurement" mnemonicParsing="false" onAction="#addProcurement" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Добавить" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btDeleteProcurement" mnemonicParsing="false" onAction="#deleteProcurement" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Удалить" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btMoreInfoProcurement" mnemonicParsing="false" onAction="#moreInfoProcurement" prefHeight="42.0" prefWidth="167.0" stylesheets="@../../../styles/buttons.css" text="Больше информации" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                     </items>
+                  </ToolBar>
+                  <TextField fx:id="tfSelectedProcurement" layoutX="148.0" layoutY="11.0" prefHeight="42.0" prefWidth="172.0" />
+                  <Label layoutX="9.0" layoutY="23.0" text="Выбранный номер">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="tableProcurements" prefHeight="406.0" prefWidth="640.0" stylesheets="@../../../styles/table.css">
+               <columns>
+                  <TableColumn fx:id="tcProcurNumber111" editable="false" prefWidth="36.0" text="№" />
+                  <TableColumn fx:id="tcProcurNumber" editable="false" minWidth="0.0" prefWidth="107.0" text="Договор" />
+                  <TableColumn fx:id="tcProviderName" editable="false" prefWidth="146.0" text="Имя Поставщика" />
+                  <TableColumn fx:id="tcProcurManager" editable="false" prefWidth="125.0" text="Менеджер" />
+                  <TableColumn fx:id="tcProcurStatus" editable="false" prefWidth="99.0" text="Статус" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox id="personalInfo" fx:id="vbPersonalInfo" layoutX="260.0" layoutY="85.0" prefHeight="516.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;">
+         <children>
+            <GridPane prefHeight="392.0" prefWidth="640.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="314.0" minWidth="10.0" prefWidth="165.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="481.0" minWidth="10.0" prefWidth="475.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Имя" textFill="#d55448" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfPatro" prefHeight="41.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="50.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Роль" textFill="#d55448" GridPane.rowIndex="5">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Пароль" textFill="#d55448" GridPane.rowIndex="4">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Отчество" textFill="#d55448" GridPane.rowIndex="3">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Фамилия" textFill="#d55448" GridPane.rowIndex="2">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfName" prefHeight="41.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="50.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="tfRole" editable="false" prefHeight="41.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets right="50.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="tfSurname" prefHeight="41.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="50.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Button fx:id="btnChangePass" mnemonicParsing="false" onAction="#changePass" prefHeight="42.0" stylesheets="@../../../styles/innerButtons.css" text="Изменить" textFill="#f9f9ff" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#saveProfile" prefHeight="42.0" stylesheets="@../../../styles/innerButtons.css" text="Сохранить изменения" textFill="#f9f9ff" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Логин" textFill="#d55448">
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="tfLogin" prefHeight="41.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets right="50.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox id="users" fx:id="vbUsers" layoutX="260.0" layoutY="84.0" prefHeight="516.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;">
+         <children>
+            <Pane prefHeight="114.0" prefWidth="640.0">
+               <children>
+                  <ToolBar layoutY="57.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="56.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;">
+                     <items>
+                        <Button fx:id="btAddUser" mnemonicParsing="false" onAction="#addUser" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Добавить" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btDeleteUser" mnemonicParsing="false" onAction="#deleteUser" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Удалить" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btEditUser" mnemonicParsing="false" onAction="#editUser" prefHeight="42.0" prefWidth="130.0" stylesheets="@../../../styles/innerButtons.css" text="Редактировать" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                     </items>
+                  </ToolBar>
+                  <Label layoutX="14.0" layoutY="22.0" text="Выбранный номер">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfSelectedUser" layoutX="158.0" layoutY="10.0" prefHeight="42.0" prefWidth="172.0" />
+                  <Button fx:id="btAnalizeUser" layoutX="336.0" layoutY="10.0" mnemonicParsing="false" onAction="#onAnalizeUser" prefHeight="42.0" prefWidth="298.0" stylesheets="@../../../styles/buttons.css" text="Анализ загруженности работника" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <TableView fx:id="tableUsers" prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;" stylesheets="@../../../styles/table.css">
+              <columns>
+                <TableColumn fx:id="tcUserNumber" prefWidth="36.0" text="№" />
+                  <TableColumn fx:id="tcUserName" prefWidth="100.0" text="Имя" />
+                  <TableColumn fx:id="tcUserSurname" prefWidth="100.0" text="Фамилия" />
+                  <TableColumn fx:id="tcUserPatro" prefWidth="100.0" text="Отчество" />
+                <TableColumn fx:id="tcUserLogin" prefWidth="100.0" text="Логин" />
+                  <TableColumn fx:id="tcUserRole" prefWidth="100.0" text="Роль" />
+                  <TableColumn fx:id="tcUserStorehouse" prefWidth="100.0" text="Склад" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox id="users" fx:id="vbStorehouses" layoutX="260.0" layoutY="84.0" prefHeight="516.0" prefWidth="640.0" style="-fx-background-color: #F9F9FF;">
+         <children>
+            <Pane prefHeight="116.0" prefWidth="640.0">
+               <children>
+                  <ToolBar layoutX="159.0" layoutY="57.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="56.0" prefWidth="481.0" style="-fx-background-color: #F9F9FF;">
+                     <items>
+                        <Button fx:id="btAddStorehouse" mnemonicParsing="false" onAction="#onAddStorehouse" prefHeight="42.0" prefWidth="151.0" stylesheets="@../../../styles/innerButtons.css" text="Добавить" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btDeleteStorehouse" mnemonicParsing="false" onAction="#onDeleteStorehouse" prefHeight="42.0" prefWidth="143.0" stylesheets="@../../../styles/innerButtons.css" text="Удалить" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btUpdateStoreshouse" mnemonicParsing="false" onAction="#onUpdateStoreshouse" prefHeight="42.0" prefWidth="143.0" stylesheets="@../../../styles/innerButtons.css" text="Изменить" textFill="#f9f9ff">
+                           <font>
+                              <Font name="Algerian" size="15.0" />
+                           </font>
+                        </Button>
+                     </items>
+                  </ToolBar>
+                  <TextField fx:id="tfSelectedStore" layoutX="148.0" layoutY="11.0" prefHeight="42.0" prefWidth="172.0" />
+                  <Label layoutX="9.0" layoutY="23.0" text="Выбранный номер">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btAnalizeStorehouse" layoutX="336.0" layoutY="9.0" mnemonicParsing="false" onAction="#onAnalizeStorehouse" prefHeight="42.0" prefWidth="298.0" stylesheets="@../../../styles/buttons.css" text="Анализ склада" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btAnalizeAllStores" layoutX="7.0" layoutY="64.0" mnemonicParsing="false" onAction="#onAnalizeAllStores" prefHeight="42.0" prefWidth="143.0" stylesheets="@../../../styles/brownButtons.css" text="Анализ компании" textFill="#f9f9ff">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <TableView fx:id="tableStorehouse" prefHeight="406.0" prefWidth="640.0" stylesheets="@../../../styles/table.css">
+               <columns>
+                  <TableColumn fx:id="tcStorehouseID" editable="false" minWidth="0.0" prefWidth="71.0" text="Номер" />
+                  <TableColumn fx:id="tcStorehouseAdress" editable="false" prefWidth="295.0" text="Адрес" />
+                  <TableColumn fx:id="tcStorehouseMaxRack" editable="false" prefWidth="136.0" text="Количество рядов" />
+                  <TableColumn fx:id="tcStorehouseMaxPlaces" editable="false" prefWidth="136.0" text="Количество мест" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

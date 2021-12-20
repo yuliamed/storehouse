@@ -1,0 +1,9 @@
+.button{
+-fx-background-color : #FFA577;
+}
+.button:hover{
+-fx-background-color : #ffc9ad;
+}
+.button:pressed{
+-fx-background-color : #ff8547;
+}
