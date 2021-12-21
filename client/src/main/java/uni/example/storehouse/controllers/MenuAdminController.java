@@ -1,6 +1,5 @@
 package uni.example.storehouse.controllers;
 
-import javafx.beans.property.ReadOnlyListWrapper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,7 +17,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import uni.example.storehouse.entities.Procurement;
 import uni.example.storehouse.entities.Storehouse;
 import uni.example.storehouse.entities.User;

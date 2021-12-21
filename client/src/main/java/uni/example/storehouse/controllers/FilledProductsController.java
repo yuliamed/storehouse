@@ -18,7 +18,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import uni.example.storehouse.entities.ProductPlacement;
-import uni.example.storehouse.entities.User;
 import uni.example.storehouse.rmi.Connector;
 
 public class FilledProductsController {

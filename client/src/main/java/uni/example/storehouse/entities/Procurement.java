@@ -1,7 +1,6 @@
 package uni.example.storehouse.entities;
 
 import java.io.Serializable;
-import java.util.Set;
 
 public class Procurement implements Serializable {
     private static final long serialVersionUID = 6529685098267757690L;
